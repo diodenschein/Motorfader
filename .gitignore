@@ -8,7 +8,6 @@
 *.elf
 *.lss
 *.map
-*.aws
 bin/
 default/
 .dep/
