@@ -101,6 +101,7 @@ int main(void){
   twi_slave_init(registers_read_byte(REG_TWI_ADDRESS));
   pid_registers_defaults();
   pwm_init();
+  registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, 0);
 
 
 while(1){
@@ -114,7 +115,7 @@ while(1){
   		ADC_Wait();
 	//	cli();
    		registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, ADCS.rawWiper);
-		 pid_registers_defaults();
+	//	 pid_registers_defaults();
 		pwm_enable();
 	//	sei();
   	}
