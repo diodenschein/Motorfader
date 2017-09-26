@@ -259,7 +259,7 @@ static void twi_write_buffer(void)
 #endif
 
 
-static uint8_t twi_read_data()
+static uint8_t twi_read_data(void)
 // Handle checked/non-checked read of data.
 {
     // By default read the data to be returned.

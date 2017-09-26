@@ -104,7 +104,7 @@ void pwm_update(uint16_t position, int16_t pwm)
 // position.
 {
 	//registers_write_byte(REG_REVERSE_SEEK,0); 
-    uint8_t pwm_width;
+    uint8_t pwm_width = 0;
     uint16_t min_position;
     uint16_t max_position;
 
