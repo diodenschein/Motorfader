@@ -27,11 +27,11 @@
 
 // Device type and subtype.  
 #define MFADER_DEVICE_TYPE           2
-#define MFADER_DEVICE_SUBTYPE        2
+#define MFADER_DEVICE_SUBTYPE        1
 
 // Software major and minor version.  
 #define SOFTWARE_VERSION_MAJOR          0
-#define SOFTWARE_VERSION_MINOR          0
+#define SOFTWARE_VERSION_MINOR          1
 
 // The default TWI address. 
 #define REG_DEFAULT_TWI_ADDR        0x10
