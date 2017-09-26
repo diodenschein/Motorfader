@@ -106,8 +106,11 @@ int main(void){
 while(1){
   if(ADCS.touch){
 	 led_g_on();
+   pwm_disable();
+   registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, ADCS.avgTouch);
   }
   else{
+    pwm_enable();
     led_g_off();
   }
   //registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, ADCS.avgTouch);
