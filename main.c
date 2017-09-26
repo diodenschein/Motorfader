@@ -18,7 +18,7 @@ static void handle_twi_command(void)
     uint8_t command;
 
     // Get the command from the receive buffer.
-    command = usiTwiReceiveByte();
+    command = twi_receive_byte();
 
 #define TWI_CMD_CHECKED_TXN             0x81        // Read/Write registers with simple checksum
 #define TWI_CMD_WRITE_ENABLE            0x84        // Enable write of safe read/write registers
@@ -110,7 +110,7 @@ int main(void){
   registers_init();
   pid_init();
   ADC_Init();
-  usiTwiSlaveInit(registers_read_byte(REG_TWI_ADDRESS)); 
+  twi_slave_init(registers_read_byte(REG_TWI_ADDRESS));
   pid_registers_defaults();
   pwm_init();
 
@@ -148,7 +148,7 @@ while(1){
   //registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, ADCS.avgTouch);
   //registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO,   ADCS.rawTouch); 
         //if (usiTwiDataInReceiveBuffer())
-        if (usiTwiAmountDataInReceiveBuffer())
+        if (twi_data_in_receive_buffer())
         {
             // Handle any TWI command.
             handle_twi_command();
