@@ -101,30 +101,23 @@ int main(void){
   twi_slave_init(registers_read_byte(REG_TWI_ADDRESS));
   pid_registers_defaults();
   pwm_init();
-  registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, 0);
+  registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, 0x0000);
 
 
 while(1){
   if(ADCS.touch){
 	 led_g_on();
    pwm_disable();
-
   }
   else{
   	if(!(registers_read_byte(REG_FLAGS_LO)&(1<<FLAGS_LO_PWM_ENABLED))){
   		ADC_Wait();
-	//	cli();
    		registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, ADCS.rawWiper);
 	//	 pid_registers_defaults();
-		pwm_enable();
-	//	sei();
+		  pwm_enable();
   	}
-
     led_g_off();
   }
-  //registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, ADCS.avgTouch);
-  //registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO,   ADCS.rawTouch); 
-        //if (usiTwiDataInReceiveBuffer())
   if (twi_data_in_receive_buffer()){
       // Handle any TWI command.
       handle_twi_command();
