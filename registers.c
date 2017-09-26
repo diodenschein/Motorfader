@@ -29,8 +29,8 @@ void registers_init(void)
     if (!eeprom_restore_registers())
     {
         // Reset read/write protected registers to zero.
-        memset(&registers[MIN_WRITE_PROTECT_REGISTER], WRITE_PROTECT_REGISTER_COUNT + REDIRECT_REGISTER_COUNT, REGISTER_COUNT);
-
+      //  memset(&registers[MIN_WRITE_PROTECT_REGISTER], WRITE_PROTECT_REGISTER_COUNT + REDIRECT_REGISTER_COUNT, REGISTER_COUNT);
+//HÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ?
         // Initialize read/write protected registers to defaults.
         registers_defaults();
     }
@@ -49,7 +49,7 @@ void registers_defaults(void)
     pwm_registers_defaults();
 
     // Call the PID module to initialize the PID related default values.
-   // pid_registers_defaults();
+    pid_registers_defaults();
 }
 
 
