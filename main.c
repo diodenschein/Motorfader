@@ -106,6 +106,7 @@ static void handle_twi_command(void)
 
 
 int main(void){
+  watchdog_init();
   leds_init();
   registers_init();
   pid_init();
