@@ -65,9 +65,9 @@
 // Define the register ranges.
 //
 #define MIN_READ_ONLY_REGISTER      0x00
-#define MAX_READ_ONLY_REGISTER      0x11
+#define MAX_READ_ONLY_REGISTER      0x12
 
-#define MIN_READ_WRITE_REGISTER     0x12
+#define MIN_READ_WRITE_REGISTER     0x13
 #define MAX_READ_WRITE_REGISTER     0x18
 
 #define MIN_WRITE_PROTECT_REGISTER  0x20
