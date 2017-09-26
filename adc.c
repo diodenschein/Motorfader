@@ -25,7 +25,7 @@ void ADC_Init(void){
 	ADCS.touchState= 0x01;
 	ADCS.tavgp = 0;
 	ADCS.touch = 0;
-	for (int i = 0; i < 5; ++i)
+	for (int i = 0; i < AVG_SIZE; ++i)
 	{
 		ADCS.touchavg[i]=0;
 	}
@@ -122,8 +122,8 @@ unsigned char  Next,NextTouch, Signed;
 					for (int i = 0; i < AVG_SIZE; ++i)
 					{
 						avg = avg + ADCS.touchavg[i];
-						ADCS.avgTouch= avg/AVG_SIZE;
 					}
+					ADCS.avgTouch= avg/AVG_SIZE;
 					if((ADCS.avgTouch > DEFAULT_TOUCH_MIN)){ //&& (ADCS.rawTouch < DEFAULT_TOUCH_MAX)){
 						ADCS.touch = 0;
 					}

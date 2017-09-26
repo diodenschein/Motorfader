@@ -107,10 +107,18 @@ while(1){
   if(ADCS.touch){
 	 led_g_on();
    pwm_disable();
-   registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, ADCS.avgTouch);
+
   }
   else{
-    pwm_enable();
+  	if(!(registers_read_byte(REG_FLAGS_LO)&(1<<FLAGS_LO_PWM_ENABLED))){
+  		ADC_Wait();
+	//	cli();
+   		registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, ADCS.rawWiper);
+		 pid_registers_defaults();
+		pwm_enable();
+	//	sei();
+  	}
+
     led_g_off();
   }
   //registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, ADCS.avgTouch);

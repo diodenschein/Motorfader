@@ -1,7 +1,7 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
-#define AVG_SIZE 6
+#define AVG_SIZE 8
 struct ADC_Status_struct
 {
 	unsigned char MUX : 5;  // Corresponds to ADMUX low bits MUX4..0. ADC state machine
