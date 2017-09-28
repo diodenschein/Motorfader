@@ -150,6 +150,7 @@ unsigned char  Next,NextTouch, Signed;
 		case 0x04:
 			ADCS.rawWiper = ADCW;
 			registers_write_word(REG_POSITION_HI, REG_POSITION_LO, ADCS.rawWiper);
+			registers_write_byte(REG_POSITION, ADCS.rawWiper >> 2);
 			int16_t pwm = pid_position_to_pwm(ADCS.rawWiper);
 			pwm_update(ADCS.rawWiper, pwm);
 			ADCS.Flag = TRUE; //END OF CYCLE

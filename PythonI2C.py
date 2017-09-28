@@ -1,6 +1,6 @@
 
 from machine import I2C
-from machine import pin
+from machine import Pin
 i2c = I2C( sda=Pin(26), scl=Pin(27), freq=400000 )
 i2c.scan()
 i2c.writeto(0x10, b'\x80') // reset 

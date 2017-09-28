@@ -19,56 +19,58 @@
 #define REG_FLAGS_LO                0x05
 #define REG_POSITION_HI             0x06
 #define REG_POSITION_LO             0x07
-#define REG_VELOCITY_HI             0x08
-#define REG_VELOCITY_LO             0x09
-#define REG_PWM                     0x0A
-#define REG_PWM_DIR                 0x0B
-#define REG_TOUCH                   0x0C
-#define REG_TOUCH_RAW_HI            0x0D
-#define REG_TOUCH_RAW_LO            0x0E
+#define REG_POSITION                0x08
+#define REG_VELOCITY_HI             0x09
+#define REG_VELOCITY_LO             0x0A
+#define REG_PWM                     0x0B
+#define REG_PWM_DIR                 0x0C
+#define REG_TOUCH                   0x0D
+#define REG_TOUCH_RAW_HI            0x0E
+#define REG_TOUCH_RAW_LO            0x0F
 
 
 // TWI read/write registers.  
-#define REG_SEEK_POSITION_HI        0x0F
-#define REG_SEEK_POSITION_LO        0x10
-#define REG_SEEK_VELOCITY_HI        0x11
-#define REG_SEEK_VELOCITY_LO        0x12
+#define REG_SEEK_POSITION_HI        0x10
+#define REG_SEEK_POSITION_LO        0x11
+#define REG_SEEK_POSITION           0x12
+#define REG_SEEK_VELOCITY_HI        0x13
+#define REG_SEEK_VELOCITY_LO        0x14
 
 // TWI safe read/write registers. 
 
-#define REG_TWI_ADDRESS             0x13
-#define REG_PID_DEADBAND            0x14
-#define REG_PID_PGAIN_HI            0x15
-#define REG_PID_PGAIN_LO            0x16
-#define REG_PID_DGAIN_HI            0x17
-#define REG_PID_DGAIN_LO            0x18
-#define REG_PID_IGAIN_HI            0x19
-#define REG_PID_IGAIN_LO            0x1A
+#define REG_TWI_ADDRESS             0x15
+#define REG_PID_DEADBAND            0x16
+#define REG_PID_PGAIN_HI            0x17
+#define REG_PID_PGAIN_LO            0x18
+#define REG_PID_DGAIN_HI            0x19
+#define REG_PID_DGAIN_LO            0x1A
+#define REG_PID_IGAIN_HI            0x1B
+#define REG_PID_IGAIN_LO            0x1C
 
-#define REG_PWM_FREQ_DIVIDER_HI     0x1B
-#define REG_PWM_FREQ_DIVIDER_LO     0x1C
-#define REG_MIN_SEEK_HI             0x1D
-#define REG_MIN_SEEK_LO             0x1E
-#define REG_MAX_SEEK_HI             0x1F
-#define REG_MAX_SEEK_LO             0x20
-#define REG_REVERSE_SEEK            0x21
-#define REG_RESERVED_2F             0x22
+#define REG_PWM_FREQ_DIVIDER_HI     0x1D
+#define REG_PWM_FREQ_DIVIDER_LO     0x1E
+#define REG_MIN_SEEK_HI             0x1F
+#define REG_MIN_SEEK_LO             0x20
+#define REG_MAX_SEEK_HI             0x21
+#define REG_MAX_SEEK_LO             0x22
+#define REG_REVERSE_SEEK            0x23
+#define REG_RESERVED_2F             0x24
 
 
 //
 // Define the register ranges.
 //
 #define MIN_READ_ONLY_REGISTER      0x00
-#define MAX_READ_ONLY_REGISTER      0x0E
+#define MAX_READ_ONLY_REGISTER      0x0F
 
-#define MIN_READ_WRITE_REGISTER     0x0F
-#define MAX_READ_WRITE_REGISTER     0x12
+#define MIN_READ_WRITE_REGISTER     0x10
+#define MAX_READ_WRITE_REGISTER     0x14
 
-#define MIN_WRITE_PROTECT_REGISTER  0x13
-#define MAX_WRITE_PROTECT_REGISTER  0x1A
+#define MIN_WRITE_PROTECT_REGISTER  0x15
+#define MAX_WRITE_PROTECT_REGISTER  0x1C
 
-#define MIN_UNUSED_REGISTER         0x1B
-#define MAX_UNUSED_REGISTER         0x22
+#define MIN_UNUSED_REGISTER         0x1D
+#define MAX_UNUSED_REGISTER         0x24
 
 #define MIN_REDIRECT_REGISTER       0x60
 #define MAX_REDIRECT_REGISTER       0x6F
@@ -95,15 +97,15 @@
 #define FLAGS_HI_RESERVED_04        0x04
 #define FLAGS_HI_RESERVED_03        0x03
 #define FLAGS_HI_RESERVED_02        0x02
-#define FLAGS_HI_RESERVED_01        0x01
-#define FLAGS_HI_RESERVED_00        0x00
+#define FLAGS_HI_POS_CHANGED        0x01
+#define FLAGS_HI_TOUCH_CHANGED      0x00
 
 #define FLAGS_LO_RESERVED_07        0x07
 #define FLAGS_LO_RESERVED_06        0x06
 #define FLAGS_LO_RESERVED_05        0x05
 #define FLAGS_LO_RESERVED_04        0x04
-#define FLAGS_LO_POS_CHANGED        0x03
-#define FLAGS_LO_TOUCH_CHANGED      0x02
+#define FLAGS_LO_RESERVED_03        0x03
+#define FLAGS_LO_RESERVED_02        0x02
 #define FLAGS_LO_WRITE_ENABLED      0x01
 #define FLAGS_LO_PWM_ENABLED        0x00
 
