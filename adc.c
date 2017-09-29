@@ -102,7 +102,7 @@ unsigned char  Next,NextTouch, Signed;
 			switch (ADCS.touchState){
 				// MUX = 0b000001 => ADC1 (PA1) = NTC
 				case 0x01:
-					PORTA ^= (0 << TSENSE)|(1 << TCHARGE);
+					PORTA ^= (0 << TSENSE)|(1 << TCHARGE); //pullup on
 					Next = 0x1F; //discarge sampling cap
 					NextTouch = 0x02;
 				break;
@@ -121,14 +121,14 @@ unsigned char  Next,NextTouch, Signed;
 					long avg=0;
 					for (int i = 0; i < AVG_SIZE; ++i)
 					{
-						avg = avg + ADCS.touchavg[i];
+						if((ADCS.avgTouch > DEFAULT_TOUCH_MIN) && (ADCS.avgTouch < DEFAULT_TOUCH_MAX))
+							avg++;
 					}
-					ADCS.avgTouch= avg/AVG_SIZE;
-					if((ADCS.avgTouch > DEFAULT_TOUCH_MIN)){ //&& (ADCS.rawTouch < DEFAULT_TOUCH_MAX)){
-						ADCS.touch = 0;
+					if( avg >= 5 ){ //&& (ADCS.rawTouch < DEFAULT_TOUCH_MAX)){
+						ADCS.touch = 1;
 					}
 					else{
-						ADCS.touch = 1;
+						ADCS.touch = 0;
 					}
 					registers_write_word(REG_TOUCH_RAW_HI, REG_TOUCH_RAW_LO, ADCS.rawTouch);
 					registers_write_byte(REG_TOUCH,ADCS.touch);
@@ -142,7 +142,7 @@ unsigned char  Next,NextTouch, Signed;
 				break;
 			}
 			ADCS.touchState = NextTouch;
-			registers_write_word(REG_TOUCH_RAW_HI, REG_TOUCH_RAW_LO, ADCS.rawTouch);
+		//	registers_write_word(REG_TOUCH_RAW_HI, REG_TOUCH_RAW_LO, ADCS.rawTouch);
 		break;
 
 
@@ -156,6 +156,7 @@ unsigned char  Next,NextTouch, Signed;
 			ADCS.Flag = TRUE; //END OF CYCLE
 			Next=0x03;
 		break;
+
 		case 0x1F: // READ GND
 			Next=0x03;
 		break;
