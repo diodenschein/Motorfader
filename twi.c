@@ -178,7 +178,13 @@ static void twi_registers_write(uint8_t address, uint8_t data)
 
     // Are we writing a read/write register?
     if (address <= MAX_READ_WRITE_REGISTER)
-    {
+    {   
+        if(address==REG_SEEK_POSITION){
+            uint16_t temp = 0;
+            temp = (data << 2 );
+            registers_write_byte(REG_SEEK_POSITION_LO, temp&0xFF);
+            registers_write_byte(REG_SEEK_POSITION_HI, temp>>8);
+        }
         // Yes. Complete the write.
         registers_write_byte(address, data);
 
