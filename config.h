@@ -39,16 +39,16 @@
 //Change motor direction
 #define SWAP_PWM_DIRECTION_ENABLED  0
 
-#define DEFAULT_PID_PGAIN               0x2400
-#define DEFAULT_PID_DGAIN               0x0900
+#define DEFAULT_PID_PGAIN               0x2500
+#define DEFAULT_PID_DGAIN               0x0300
 #define DEFAULT_PID_IGAIN               0x0000
-#define DEFAULT_PID_DEADBAND            0x00
+#define DEFAULT_PID_DEADBAND            0x0000
 
 // Specify default mininimum and maximum seek positions.  
 #define DEFAULT_MIN_SEEK                0x0002
 #define DEFAULT_MAX_SEEK                0x03FB
 
-#define DEFAULT_SEEK_VELOCITY           0x0001
+#define DEFAULT_SEEK_VELOCITY           0x0020
 
 // Enable (1) or disable (0) checksuming
 #define TWI_CHECKED_ENABLED         0
