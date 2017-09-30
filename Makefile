@@ -88,7 +88,7 @@ SRC += registers.c
 SRC += eeprom.c
 SRC += twi.c
 SRC += watchdog.c
-SRC += pid.c
+SRC += ipd.c
 #SRC += include/lc7981.c
 
 

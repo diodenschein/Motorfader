@@ -9,7 +9,7 @@
 #include "twi.h"
 #include "watchdog.h"
 #include "eeprom.h"
-#include "pid.h"
+#include "ipd.h"
 //#include "fuse8mhz.h"
 
 
@@ -96,10 +96,9 @@ int main(void){
   watchdog_init();
   leds_init();
   registers_init();
-  pid_init();
+  ipd_init();
   ADC_Init();
   twi_slave_init(registers_read_byte(REG_TWI_ADDRESS));
-  pid_registers_defaults();
   pwm_init();
   registers_write_word(REG_SEEK_POSITION_HI, REG_SEEK_POSITION_LO, 0x0000);
 
