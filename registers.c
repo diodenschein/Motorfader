@@ -4,7 +4,7 @@
 //#include "openservo.h"
 #include "config.h"
 #include "eeprom.h"
-//#include "pid.h"
+#include "ipd.h"
 #include "pwm.h"
 #include "registers.h"
 
@@ -49,7 +49,7 @@ void registers_defaults(void)
     pwm_registers_defaults();
 
     // Call the PID module to initialize the PID related default values.
-    pid_registers_defaults();
+    ipd_registers_defaults();
 }
 
 

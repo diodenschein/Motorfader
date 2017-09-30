@@ -4,7 +4,7 @@
 #include "adc.h"
 #include "structs.h"
 #include "registers.h"
-#include "pid.h"
+#include "ipd.h"
 #include "pwm.h"
 
 volatile ADC_Status_t ADCS;
@@ -151,7 +151,7 @@ unsigned char  Next,NextTouch, Signed;
 			ADCS.rawWiper = ADCW;
 			registers_write_word(REG_POSITION_HI, REG_POSITION_LO, ADCS.rawWiper);
 			registers_write_byte(REG_POSITION, ADCS.rawWiper >> 2);
-			int16_t pwm = pid_position_to_pwm(ADCS.rawWiper);
+			int16_t pwm = ipd_position_to_pwm(ADCS.rawWiper);
 			pwm_update(ADCS.rawWiper, pwm);
 			ADCS.Flag = TRUE; //END OF CYCLE
 			Next=0x03;
