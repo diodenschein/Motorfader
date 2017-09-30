@@ -45,8 +45,8 @@
 #define DEFAULT_PID_DEADBAND            0x00
 
 // Specify default mininimum and maximum seek positions.  
-#define DEFAULT_MIN_SEEK                0x0000
-#define DEFAULT_MAX_SEEK                0x03FF
+#define DEFAULT_MIN_SEEK                0x0002
+#define DEFAULT_MAX_SEEK                0x03FB
 
 
 // Enable (1) or disable (0) checksuming
