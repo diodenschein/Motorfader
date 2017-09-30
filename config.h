@@ -54,7 +54,7 @@
 #define TWI_CHECKED_ENABLED         0
 
 
-#define DEFAULT_TOUCH_MIN   600
+#define DEFAULT_TOUCH_MIN   300
 #define DEFAULT_TOUCH_MAX   900
 
 
