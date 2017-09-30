@@ -77,7 +77,7 @@ void pid_registers_defaults(void)
     // Default position limits.
     registers_write_word(REG_MIN_SEEK_HI, REG_MIN_SEEK_LO, DEFAULT_MIN_SEEK);
     registers_write_word(REG_MAX_SEEK_HI, REG_MAX_SEEK_LO, DEFAULT_MAX_SEEK);
-
+    registers_write_word(REG_SEEK_VELOCITY_HI, REG_SEEK_VELOCITY_LO, DEFAULT_SEEK_VELOCITY);
     // Default reverse seek setting.
     registers_write_byte(REG_REVERSE_SEEK, 0x00);
 }
