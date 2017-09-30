@@ -121,7 +121,7 @@ unsigned char  Next,NextTouch, Signed;
 					long avg=0;
 					for (int i = 0; i < AVG_SIZE; ++i)
 					{
-						if((ADCS.avgTouch > DEFAULT_TOUCH_MIN) && (ADCS.avgTouch < DEFAULT_TOUCH_MAX))
+						if((ADCS.touchavg[i] < DEFAULT_TOUCH_MIN) || (ADCS.touchavg[i] > DEFAULT_TOUCH_MAX))
 							avg++;
 					}
 					if( avg >= 5 ){ //&& (ADCS.rawTouch < DEFAULT_TOUCH_MAX)){
