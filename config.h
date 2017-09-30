@@ -48,6 +48,7 @@
 #define DEFAULT_MIN_SEEK                0x0002
 #define DEFAULT_MAX_SEEK                0x03FB
 
+#define DEFAULT_SEEK_VELOCITY           0x0001
 
 // Enable (1) or disable (0) checksuming
 #define TWI_CHECKED_ENABLED         0
