@@ -116,16 +116,16 @@ void ipd_registers_defaults(void)
 // here to keep the PID related code in a single file.  
 {
     // Default gain values.
-    registers_write_word(REG_PID_PGAIN_HI, REG_PID_PGAIN_LO, 0x0700);
-    registers_write_word(REG_PID_DGAIN_HI, REG_PID_DGAIN_LO, 0x0200);
-    registers_write_word(REG_PID_IGAIN_HI, REG_PID_IGAIN_LO, 0x8000);
+    registers_write_word(REG_PID_PGAIN_HI, REG_PID_PGAIN_LO, DEFAULT_PID_PGAIN);
+    registers_write_word(REG_PID_DGAIN_HI, REG_PID_DGAIN_LO, DEFAULT_PID_DGAIN);
+    registers_write_word(REG_PID_IGAIN_HI, REG_PID_IGAIN_LO, DEFAULT_PID_IGAIN);
 
     // Default position limits.
-    registers_write_word(REG_MIN_SEEK_HI, REG_MIN_SEEK_LO, 0x0002);
-    registers_write_word(REG_MAX_SEEK_HI, REG_MAX_SEEK_LO, 0x03FD);
+    registers_write_word(REG_MIN_SEEK_HI, REG_MIN_SEEK_LO, DEFAULT_MIN_SEEK);
+    registers_write_word(REG_MAX_SEEK_HI, REG_MAX_SEEK_LO, DEFAULT_MAX_SEEK);
 
     // Default reverse seek setting.
-    registers_write_byte(REG_REVERSE_SEEK, 0x00);
+    registers_write_byte(REG_REVERSE_SEEK, SWAP_PWM_DIRECTION_ENABLED);
 }
 
 
@@ -183,7 +183,7 @@ int16_t ipd_position_to_pwm(int16_t current_position)
     maximum_position = (int16_t) registers_read_word(REG_MAX_SEEK_HI, REG_MAX_SEEK_LO);
 
     // Set the deadband value and divide by two for calculations below.
-    deadband = 2;
+    deadband = 0;
 
     // Are we reversing the seek sense?
     if (registers_read_byte(REG_REVERSE_SEEK) != 0)

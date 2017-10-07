@@ -30,29 +30,29 @@
 
 
 // TWI read/write registers.  
-#define REG_SEEK_POSITION_HI        0x10
-#define REG_SEEK_POSITION_LO        0x11
+#define REG_SEEK_POSITION_LO        0x10
+#define REG_SEEK_POSITION_HI        0x11
 #define REG_SEEK_POSITION           0x12
-#define REG_SEEK_VELOCITY_HI        0x13
-#define REG_SEEK_VELOCITY_LO        0x14
+#define REG_SEEK_VELOCITY_LO        0x13
+#define REG_SEEK_VELOCITY_HI        0x14
 
 // TWI safe read/write registers. 
 
 #define REG_TWI_ADDRESS             0x15
 #define REG_PID_DEADBAND            0x16
-#define REG_PID_PGAIN_HI            0x17
-#define REG_PID_PGAIN_LO            0x18
-#define REG_PID_DGAIN_HI            0x19
-#define REG_PID_DGAIN_LO            0x1A
-#define REG_PID_IGAIN_HI            0x1B
-#define REG_PID_IGAIN_LO            0x1C
+#define REG_PID_PGAIN_LO            0x17
+#define REG_PID_PGAIN_HI            0x18
+#define REG_PID_DGAIN_LO            0x19
+#define REG_PID_DGAIN_HI            0x1A
+#define REG_PID_IGAIN_LO            0x1B
+#define REG_PID_IGAIN_HI            0x1C
 
-#define REG_PWM_FREQ_DIVIDER_HI     0x1D
-#define REG_PWM_FREQ_DIVIDER_LO     0x1E
-#define REG_MIN_SEEK_HI             0x1F
-#define REG_MIN_SEEK_LO             0x20
-#define REG_MAX_SEEK_HI             0x21
-#define REG_MAX_SEEK_LO             0x22
+#define REG_PWM_FREQ_DIVIDER_LO     0x1D
+#define REG_PWM_FREQ_DIVIDER_HI     0x1E
+#define REG_MIN_SEEK_LO             0x1F
+#define REG_MIN_SEEK_HI             0x20
+#define REG_MAX_SEEK_LO             0x21
+#define REG_MAX_SEEK_HI             0x22
 #define REG_REVERSE_SEEK            0x23
 #define REG_RESERVED_2F             0x24
 

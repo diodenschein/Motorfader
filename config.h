@@ -42,7 +42,7 @@
 #define DEFAULT_PID_PGAIN               0x2500
 #define DEFAULT_PID_DGAIN               0x0300
 #define DEFAULT_PID_IGAIN               0x0000
-#define DEFAULT_PID_DEADBAND            0x0000
+//#define DEFAULT_PID_DEADBAND            0x0000
 
 // Specify default mininimum and maximum seek positions.  
 #define DEFAULT_MIN_SEEK                0x0002
