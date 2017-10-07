@@ -183,7 +183,7 @@ int16_t ipd_position_to_pwm(int16_t current_position)
     maximum_position = (int16_t) registers_read_word(REG_MAX_SEEK_HI, REG_MAX_SEEK_LO);
 
     // Set the deadband value and divide by two for calculations below.
-    deadband = 2;
+    deadband = 1;
 
     // Are we reversing the seek sense?
     if (registers_read_byte(REG_REVERSE_SEEK) != 0)

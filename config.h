@@ -39,9 +39,9 @@
 //Change motor direction
 #define SWAP_PWM_DIRECTION_ENABLED  0
 
-#define DEFAULT_PID_PGAIN               0x2400
-#define DEFAULT_PID_DGAIN               0x0900
-#define DEFAULT_PID_IGAIN               0x0000
+#define DEFAULT_PID_PGAIN               0x0700
+#define DEFAULT_PID_DGAIN               0x0200
+#define DEFAULT_PID_IGAIN               0x8000
 #define DEFAULT_PID_DEADBAND            0x00
 
 // Specify default mininimum and maximum seek positions.  
